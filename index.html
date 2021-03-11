@@ -4,18 +4,28 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- FONT -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 
   <!-- CSS STYLESHEET -->
   <link rel="stylesheet" href="./style.css">
-  <title>Weather Where You Are</title>
+  <title>Weather API</title>
 </head>
 <body>
   <main class="body-container body-grid">
     <h1 class=home__title>Weather</h1>
-    <h4 class="home__subtitle">What's the weather where you are?</h4>
-    <input type="text">
+    <input 
+      type="text" 
+      class="user-input" 
+      id="userInput" 
+      placeholder="Search for your city"
+      />
     <button>Submit</button>
-    
+    <div class="temperature__location"></div>
+    <h2 class="temperature__degree">30</h2>
+    <div class="temperature__icon"></div>
+    <div class="temperature__description">It's raining</div>
   </main>
   
 </body>
