@@ -5,6 +5,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
+  <!-- BOXICONS CSS -->
+  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
   <!-- FONT -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 
@@ -14,22 +16,29 @@
 </head>
 <body>
   <div class="body-container body-grid">
+    <h1 class=app__title>Weather</h1>
     <div class="card">
-      <h1 class=home__title>Weather</h1>
-      <input 
+      <div class="temperature__icon" id="temperatureIcon"><img src="https://openweathermap.org/img/wn/04n.png" alt="Icon for the weather"></div>
+      <div class="card-search">
+        <input 
         type="text" 
         class="user-input" 
         id="userInput" 
         placeholder="Search for your city"
         />
-      <button>Submit</button>
-      <div class="temperature__location"></div>
-      <h2 class="temperature__degree">30</h2>
-      <div class="temperature__icon"></div>
-      <div class="temperature__description">It's raining</div>
-      <div class="temperature__humidity">Humidity: 30%</div>
-      <div class="temperature__feels">Feels like 23</div>
+        <button class="Btn" id="Btn"><i class='bx bx-search'></i></button>
+      </div>
+      <div class="temperature__data">
+        <div class="temperature__location" id="temperatureLocation">Paris</div>
+        <h2 class="temperature__degree" id="temperatureDegree">30</h2>
+        <div class="temperature__description" id="temperatureDescription">It's raining</div>
+        <div class="temperature__humidity" id="temperatureHumidity">Humidity: 30%</div>
+        <div class="temperature__feels" id="temperatureFeels">Feels like 23</div>
+      </div>
     </div>
   </div>
+  <script src="./fetch.js"></script>
+  <script src="./app.js"></script>
+  <script src="./main.js"></script>
 </body>
 </html>

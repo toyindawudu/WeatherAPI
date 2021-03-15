@@ -32,6 +32,11 @@ body {
   height: 100vh;
 }
 
+.app__title{
+  color: white;
+  padding-bottom: 2rem;
+}
+
 .card {
   background: #fff;
   width: 100%;
@@ -40,8 +45,38 @@ body {
   max-width: 340px;
   padding: 1rem;
   text-align: center;
+  border-radius: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border: 2px solid red;
+}
+
+.card-search {
+  border: 2px solid green;
 }
 
 .home__title, .user-input {
   margin: 1rem 0rem;
+}
+
+.user-input {
+  padding: .5rem;
+}
+
+.Btn {
+  padding: .5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 20px;
+  outline: none;
+}
+
+
+.temperature__data {
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  font-size: 1.25rem;
 }
