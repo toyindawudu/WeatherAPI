@@ -22,14 +22,24 @@ let weather = {
     const {temp, humidity} = data.main;
     const {speed} = data.wind;
     console.log(name, icon, description, temp, humidity, speed);
-    document.getElementById("temperatureIcon").src = 
+    document.querySelector(".icon").src = 
     "https://openweathermap.org/img/wn/" + icon + ".png";
-    document.getElementById("temperatureLocation").innerText = name;
-    document.getElementById("temperatureDegree").innerText = Math.ceil(temp);
-    document.getElementById("temperatureDescription").innerText = description;
+    document.querySelector("temperatureLocation").innerText = name;
+    document.querySelector("temperatureDegree").innerText = Math.ceil(temp);
+    document.querySelector("temperatureDescription").innerText = description;
   },  
   // This anonymous function runs when the user clicks on the search button
   search: function(){
     this.fetchWeather(document.getElementById("userInput").value)
   }
 };
+
+document.querySelector(".card-search .Btn").addEventListener("click", function(){
+  weather.search();
+});
+
+document.querySelector("userInput").addEventListener("keyup", function(event){
+  if(event.key == "Enter"){
+    weather.search();
+  }
+});

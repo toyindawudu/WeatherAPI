@@ -20,7 +20,7 @@ h1,h2, h3, h4, h5, h6 {
 
 body {
   font-family: 'Roboto', sans-serif;
-  background: #222;
+  background: #fff;
 }
 
 
@@ -33,12 +33,13 @@ body {
 }
 
 .app__title{
-  color: white;
+  color: #222;
   padding-bottom: 2rem;
 }
 
 .card {
-  background: #fff;
+  background: #222;
+  color: #fff;
   width: 100%;
   height: 80vh;
   margin: 0rem 1rem;
@@ -49,12 +50,12 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  border: 2px solid red;
+  /* border: 2px solid red; */
 }
 
-.card-search {
+/* .card-search {
   border: 2px solid green;
-}
+} */
 
 .home__title, .user-input {
   margin: 1rem 0rem;
@@ -72,6 +73,12 @@ body {
   outline: none;
 }
 
+.temperature__icon {
+  background: #fff;
+  height: 150px;
+  width: 250px;
+  margin: 0 auto;
+}
 
 .temperature__data {
   height: 100px;
@@ -79,4 +86,8 @@ body {
   flex-direction: column;
   justify-content: space-evenly;
   font-size: 1.25rem;
+}
+
+.temperature__description {
+  text-transform: capitalize;
 }
