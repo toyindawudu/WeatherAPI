@@ -19,14 +19,13 @@ let weather = {
   displayWeather: function(data){
     const {name} = data;
     const {icon, description} = data.weather[0];
-    const {temp, humidity} = data.main;
-    const {speed} = data.wind;
-    console.log(name, icon, description, temp, humidity, speed);
+    const {temp, temp_min, temp_max} = data.main;
     document.querySelector(".icon").src = 
     "https://openweathermap.org/img/wn/" + icon + ".png";
     document.querySelector("temperatureLocation").innerText = name;
     document.querySelector("temperatureDegree").innerText = Math.ceil(temp);
     document.querySelector("temperatureDescription").innerText = description;
+    document.querySelector("temperaturehi-low").innerText = `${temp_min}°c / ${temp_max}°c`;
   },  
   // This anonymous function runs when the user clicks on the search button
   search: function(){
@@ -38,8 +37,8 @@ document.querySelector(".card-search .Btn").addEventListener("click", function()
   weather.search();
 });
 
-document.querySelector("userInput").addEventListener("keyup", function(event){
-  if(event.key == "Enter"){
-    weather.search();
-  }
-});
+// document.querySelector(".userInput").addEventListener("keyup", function(event){
+//   if(event.key == "Enter"){
+//     weather.search();
+//   }
+// });

@@ -21,6 +21,7 @@ h1,h2, h3, h4, h5, h6 {
 body {
   font-family: 'Roboto', sans-serif;
   background: #fff;
+  background-image: url(./photo-1531685250784-7569952593d2.jpeg);
 }
 
 
@@ -63,6 +64,11 @@ body {
 
 .user-input {
   padding: .5rem;
+  background-color: rgba(255,255,255,0.3);
+}
+
+.user-input:focus {
+  background-color: rgba(255,255,255,0.6);
 }
 
 .Btn {
@@ -86,6 +92,13 @@ body {
   flex-direction: column;
   justify-content: space-evenly;
   font-size: 1.25rem;
+}
+
+.temperature__location {
+  font-size: 16px;
+}
+.temperature__degree {
+  font-size: 90px;
 }
 
 .temperature__description {
