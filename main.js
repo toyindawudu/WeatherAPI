@@ -1,32 +1,50 @@
 // Store API key within an API object
 const api = {
-  apiKey:"69ec377536fefde8dd5ef06d398568cb",
-  webUrl: "http://api.openweathermap.org/data/2.5/"
+  key:"69ec377536fefde8dd5ef06d398568cb",
+  base: "http://api.openweathermap.org/data/2.5/"
 }
+const searchbox = document.querySelector('.user-input');
+searchbox.addEventListener('keypress', setQuery);
 
-const inputValue = document.querySelector('.user-input .card-search .btn');
-inputValue.addEventListener("click", submitSearch);
-
-// create a function that invokes a search when user presses Enter
-function submitSearch(event){
-  if(event.keyCode == 13) {
-    getWeather(inputValue.value);
+function setQuery(evt) {
+  if (evt.keyCode == 13) {
+    getResults(searchbox.value);
   }
 }
 
-// create a function that fetches the weather data
-function getWeather(city){
-  fetch(`${api.webUrl}weather?q=${city}&units=metric&appid=${api.apiKey}`)
-  .then(weather => {
-    return weather.json();
-  }).then(displayWeather);
+function getResults (query) {
+  fetch(`${api.base}weather?q=${query}&units=metric&appid=${api.key}`)
+    .then(weather => {
+      return weather.json();
+    }).then(displayResults);
 }
 
-function displayWeather(weather){
-  let city = document.querySelector(".temperature__location .card-search .btn")
-  cityValue.innerText = `${weather.name}`;
+function displayResults (weather) {
+  let city = document.querySelector('.location .city');
+  city.innerText = `${weather.name}, ${weather.sys.country}`;
+
+  // let now = new Date();
+  // let date = document.querySelector('.location .date');
+  // date.innerText = dateBuilder(now);
+
+  let temp = document.querySelector('.current .temp');
+  temp.innerHTML = `${Math.round(weather.main.temp)}<span>°c</span>`;
+
+  let weather_el = document.querySelector('.current .weather');
+  weather_el.innerText = weather.weather[0].main;
+
+  let hilow = document.querySelector('.hi-low');
+  hilow.innerText = `${Math.round(weather.main.temp_min)}°c / ${Math.round(weather.main.temp_max)}°c`;
 }
 
-// document.querySelector(".card-search .Btn").addEventListener("click", function(){
-//   weather.search();
-// });
+// function dateBuilder (d) {
+//   let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+//   let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+//   let day = days[d.getDay()];
+//   let date = d.getDate();
+//   let month = months[d.getMonth()];
+//   let year = d.getFullYear();
+
+//   return `${day} ${date} ${month} ${year}`;
+// }

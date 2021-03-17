@@ -86,7 +86,7 @@ body {
   margin: 0 auto;
 }
 
-.temperature__data {
+.data {
   height: 100px;
   display: flex;
   flex-direction: column;
@@ -94,13 +94,13 @@ body {
   font-size: 1.25rem;
 }
 
-.temperature__location {
+.location {
   font-size: 16px;
 }
-.temperature__degree {
+.degree {
   font-size: 90px;
 }
 
-.temperature__description {
+.description {
   text-transform: capitalize;
 }
