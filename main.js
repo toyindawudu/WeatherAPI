@@ -7,7 +7,7 @@ const searchbox = document.querySelector('.user-input');
 searchbox.addEventListener('keypress', setQuery);
 
 function setQuery(evt) {
-  if (evt.keyCode == 13) {
+  if (evt.keyCode == 13 || evt === "Enter") {
     getResults(searchbox.value);
   }
 }
